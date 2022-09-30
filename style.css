@@ -1,0 +1,146 @@
+html{
+    font-family: 'Arial';
+}
+
+body{
+    background-image: linear-gradient(90deg, rgb(0, 119, 230), rgb(0, 229, 245), rgb(0, 119, 230));
+    background-size: cover;
+    color: rgb(255, 255, 255);
+    margin: 1em;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -0.2em;
+}
+
+#main{
+    width: 75%;
+    height: 100%;
+    margin: auto;
+    background-color: rgba(24, 86, 105, 0.25);
+    border-radius: 10px;
+    padding: 1.5em
+}
+
+p{
+    text-align: justify;
+    margin-bottom: 30px;
+}
+
+table{
+    text-align: center;
+    border-spacing: 0;
+    margin: auto;
+    border: 2px solid rgb(8, 75, 175);
+    border-radius: 5px;
+}
+
+td, th{
+    border: 2px solid rgb(8, 75, 175);
+    padding: 1em;
+    text-align: center;
+}
+
+#animacio{
+    margin-top: 50px;
+    display: inline-block;
+    transform: rotateX(180deg);
+    text-align: center;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.red{
+    background-color: rgb(177, 0, 0);
+    width: 30px;
+    float: left;
+    margin: 10px;
+    position: relative;
+}
+
+#oszlop1{
+    height: 170px;
+    animation:   egyetjobbra 0s 0.5s forwards, turnyellow 0s 0s forwards,
+                 turnred 0s 1s forwards,
+                 turnyellow 0s 2.5s forwards, turnred 0s 3s forwards,
+                 kettotjobbra 0s 4s forwards,
+                 turnyellow 0s 4.5s forwards, turnred 0s 5s forwards, negyetjobbra 0s 5.5s forwards,
+                 turnyellow 0s 6s forwards, turngreen 0s 6.5s forwards;
+
+}
+
+#oszlop2{
+    height: 90px;
+    animation:  egyetbalra 0s 0.5s forwards, turnyellow 0s 0s forwards,
+                egyetjobbra 0s 1s forwards, turnred 0s 1s forwards,
+                turnyellow 0s 2.5s forwards,
+                eredeti 0s 4s forwards, turngreen 0s 4s forwards;  
+}
+
+#oszlop3{
+    height: 70px;
+    animation:  turnyellow 0s 1s forwards, kettotbalra 0s 1s forwards,
+                turngreen 0s 2s forwards;
+}
+
+#oszlop4{
+    height: 130px;
+    animation:  turnyellow 0s 1s forwards, turnred 0s 1.5s forwards,
+                turnyellow 0s 3s forwards, turnred 0s 3.5s forwards,
+                turnyellow 0s 4.5s forwards,
+                turngreen 0s 6.5s forwards;
+}
+
+#oszlop5{
+    height: 110px;
+    animation:  turnyellow 0s 1.5s forwards, turnred 0s 2s forwards,
+                turnyellow 0s 3.5s forwards, turnred 0s 4s forwards,
+                turnyellow 0s 5s forwards, kettotbalra 0s 5.5s forwards, turngreen 0s 5.5s forwards;
+}
+
+#animaciogomb{
+    padding: 6px;
+}
+
+.center{
+    text-align: center;
+    margin-top: 10px;
+}
+
+@keyframes turnyellow{
+    100% {background-color : rgb(255, 255, 82);}
+}
+
+@keyframes turnred{
+    100% {background-color: rgb(177, 0, 0);}
+}
+
+@keyframes turngreen{
+    100% {background-color: green;}
+}
+
+@keyframes eredeti{
+    100% {left: 0px;}
+}
+
+@keyframes egyetbalra{
+    100% {left: -50px;}
+}
+
+@keyframes egyetjobbra{
+    100% {left: 50px;}
+}
+
+@keyframes kettotbalra{
+    100% {left: -100px;}
+}
+
+@keyframes kettotjobbra{
+    100% {left: 100px;}
+}
+
+@keyframes negyetjobbra{
+    100% {left: 200px;}
+}

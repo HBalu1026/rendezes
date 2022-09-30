@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimumkiválasztásos rendezés</title>
+    <link rel="stylesheet" href="style.css">
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+
+  <script>
+    $(function(){
+    $('#animaciogomb').click(function(){
+
+        $("#oszlop1, #oszlop2, #oszlop3, #oszlop4, #oszlop5").css({animation:"null"})
+
+        setTimeout(function(){
+
+            $("#oszlop1, #oszlop2, #oszlop3, #oszlop4, #oszlop5").css({animation:""})
+             } ,10)
+        })
+    })
+  </script>
+  
+</head>
+<body>
+    <div id="main">
+        <h1>Minimumkiválasztásos rendezés</h1>
+
+        <p>
+            Ha megkeressük az összes elem közül a legkisebbet, akkor azt becserélhetjük az első helyre. Ezt ugyanúgy megcsináljuk a második elemtől kezdődő résztömbben is, az itt kapott legkisebb elmete pedig becseráljük a második helyre. Ezt addig ismételjük míg pontosan egy elem marad ami kizárásos alapon az utolsó (legnagyobb) elem lesz.<br>
+        </p>
+
+        <p>
+            Algoritmus:<br>
+            Ciklus i = 0-tól 5-ig<br>
+            minimum = i<br>
+            Ciklus j = i + 1-től 6-ig<br>
+            HA a [minimum] > j<br>
+            AKKOR<br>
+            minimum = j<br>
+            csere a[i] a [minmimum]-ra<br>
+        </p>
+
+        <table>
+            <tr>
+                <th>Hatékonyság</th>
+                <th>Összehasonlítások száma</th>
+                <th>Tárigény</th>
+                <th>Mozgatások száma</th>
+            </tr>
+
+            <tr>
+                <td>A rendező ciklus belsejében cserék helyett<br> egy minimumkiválasztást, így<br> sok felesleges cserét kerül el</td>
+                <td>N*(N-1)/2</td>
+                <td>N+1</td>
+                <td>3*(N-1)/2</td>
+            </tr>
+        </table>
+
+        <div id="animacio">
+            <div id="oszlop1" class="red"></div>
+            <div id="oszlop2" class="red"></div>
+            <div id="oszlop3" class="red"></div>
+            <div id="oszlop4" class="red"></div>
+            <div id="oszlop5" class="red"></div>
+        </div>
+
+        <div class="center">
+            <button type="button" id="animaciogomb">Animáció lejátszása</button>
+        </div>
+    </div>
+
+</body>
+</html>
